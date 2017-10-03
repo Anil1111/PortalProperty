@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html ng-app="SignIn">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../script/Services.js"></script>
+    <script src="script/PropService.js"></script>
+    <script src="../script/Demo.js"></script>
+    <script src="script/PropService.js"></script>
+    <script src="../script/ImageUpload.js"></script>
+
+</head>
+<body> 
+    <form>
+        <div class="container">
+            <nav role="navigation" class="navbar navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="#!AdminPage" class="text-right text-danger">Admin</a></li>
+                    <li><a href="#!Login" class="text-right text-danger">Login</a></li>
+                    <li><a href="#!Add" class="text-right text-danger">Sign Up</a></li>
+                </ul>
+            </nav>
+            <nav role="navigation" class="navbar navbar-left">
+                <ul class="nav navbar-nav">
+                    <img alt="html example photo" src="view/5354AC346D3E758B87747C067DE9EB1DB1F5F288-406873-400-200-0.jpg" width="200" height="180" />
+                </ul>
+            </nav>
+        </div>
+        <style>
+            #search {
+               
+                width: 700px;
+                padding: 10px;
+                border: 1px solid #0094ff;
+            }
+            #Submit {
+                padding: 7px;
+                background: blue;
+                border: 1px solid #0094ff;
+                color: white;
+                margin-right: -5px;
+            }
+                #Submit:hover {
+                    background: #808080;
+                    transition: all 0.45s;
+                }
+        </style>
+        <div>
+            <input type="text" placeholder="Search Property..." maxlength="40" id="search" />
+            <input type="submit" value="Search" id="Submit" ng-click="searchByLocation()" />
+        </div>
+        <br />
+        <img alt="html example photo" src="view/7e9fd8e945abfc8d2a35f7b111bb36f3--my-dream-house-dream-houses.jpg" width="250" height="200" />
+        <br />
+        <div ng-view>
+        </div>
+    </form>
+</body>
+</html>

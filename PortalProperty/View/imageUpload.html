@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="Prop">
+<head>
+    <title></title>
+    
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../script/ImageUpload.js"></script>
+   
+</head>
+<body ng-controller="fileUpController">
+    <div class="container">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                Images
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Title</td>
+                            <td>Image</td>
+                            <td>Size</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="image in imagesrc track by $index">
+                            <td>{{image.name}}</td>
+                            <td>
+                                <img ng-src="{{image.Src}}" title="{{image.Title}}" style="width:100px" />
+                            </td>
+                            <td>{{image.size}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <input type="file" multiple ng-files="getImages($files)" />
+                    </div>
+                    <div class="col-lg-5">
+                        <input ng-disabled="!imagesrc.length" type="button" class="btn btn-success" ng-click="loadup()" placeholder="upload" />
+                        <input ng-disabled="!imagesrc.length" type="button" class="btn btn-success" ng-click="reset()" placeholder="Cancel" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Register</title>
+    <meta charset="utf-8" />
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/Users/SignUp.js"></script>
+</head>
+<body ng-controller="UserController">
+
+    <div class="alert-link">
+        <label ng-click="SignIn()">Sign up</label>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text"  ng-model="firstName" placeholder="firstname"  formmethod="post" ></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" ng-model="lastName"  placeholder="lastname" formmethod="post"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" id="txt_email" ng-model='Email'  placeholder="email" formmethod="post"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="txt_password" ng-model="Password" placeholder="password"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="input">
+        <button ng-click="AdUser()">SignUp</button>
+
+    </div>
+</body>
+</html>

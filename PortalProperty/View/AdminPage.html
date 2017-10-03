@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h2>Admin Login Form</h2>
+    <form>
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+                <div ng-controller="AdminController">
+                    <label><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required />
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required />
+                    <button type="submit" ng-click="login">Login</button>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+        </div>
+
+    </form>
+</body>
+</html>

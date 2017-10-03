@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Property</title>
+	<meta charset="utf-8" />
+    
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Services.js"></script>
+    <script src="../Demo.js"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div ng-controller="AddPropController">
+                <form>
+                    <div class="form-group">
+                        <label for="inputEmail">PropDesc</label>
+                        <input type="text" ng-model="Prop_Desc" class="form-control input-lg" placeholder="Property description" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">PropType</label>
+                        <input list="Property Types"  ng-model="Prop_Type" name="Property Type" class="form-control input-lg" placeholder="Property Details"/>
+                        <datalist id="Property Types">
+                            <select name="Property Types">
+                                <option value="Flat">Flat</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Development">Development</option>
+                                <option value="Plot">Plot</option>
+                                <option value="TownHouse">TownHouse</option>
+                            </select>
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Property Status</label>
+                        <input list="Property Status"  ng-model="Prop_Stat" name="Property Status" class="form-control input-lg" placeholder="Property Status"/>
+                        <datalist id="Property Status">
+                            <select name="Property Status">
+                                <option value="For Sale">For Sale</option>
+                                <option value="For Rent">For Rent</option>
+                            </select>
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">BedRoom</label>
+                        <input type="number" ng-model="BedRoom" class="form-control input-lg" placeholder="BedRoom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">BathRoom</label>
+                        <input type="number" ng-model="BathRoom" class="form-control input-lg" placeholder="BathRoom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Garage</label>
+                        <input type="number" ng-model="Garage" class="form-control input-lg" placeholder="Garage" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Price</label>
+                        <input type="number" ng-model="Price" class="form-control input-lg" placeholder="Price" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">City</label>
+                        <input type="text" ng-model="Cities" class="form-control input-lg" placeholder="City" />
+                    </div><br>
+                    <div class="form-group">
+                        <label for="inputEmail">Address</label>
+                        <input type="text" ng-model="Address" class="form-control input-lg" placeholder="Address" />
+                    </div>
+                    <div>
+                        <button ng-click="AddProp()" class="btn btn-info form-control input-lg">Add Property</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

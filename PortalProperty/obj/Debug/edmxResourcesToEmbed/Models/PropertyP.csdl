@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="contact" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
+    <EntitySet Name="tblGalleries" EntityType="Database1Model.tblGallery" />
+    <EntitySet Name="tblProperties" EntityType="Database1Model.tblProperty" />
+    <EntitySet Name="tblLocations" EntityType="Database1Model.tblLocation" />
+    <FunctionImport Name="GetPropertyInformation" ReturnType="Collection(Database1Model.GetPropertyInformation_Result)" />
+    <FunctionImport Name="Procedure" ReturnType="Collection(Database1Model.Procedure_Result)" />
+    <EntitySet Name="tblMails" EntityType="Database1Model.tblMail" />
+    <EntitySet Name="tblAdmins" EntityType="Database1Model.tblAdmin" />
+  </EntityContainer>
+  <EntityType Name="tblGallery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Images" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProperyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblProperty">
+    <Key>
+      <PropertyRef Name="Prop_id" />
+    </Key>
+    <Property Name="Prop_id" Type="Int32" Nullable="false" />
+    <Property Name="Prop_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Prop_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prop_Stat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BedRoom" Type="Int32" />
+    <Property Name="BathRoom" Type="Int32" />
+    <Property Name="Garage" Type="Int32" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="Cities" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblLocation">
+    <Key>
+      <PropertyRef Name="LocID" />
+    </Key>
+    <Property Name="LocID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PropID" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="GetPropertyInformation_Result">
+    <Property Type="String" Name="Prop_desc" Nullable="true" />
+    <Property Type="String" Name="Prop_type" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Price" Nullable="true" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Procedure_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Binary" Name="Images" Nullable="true" />
+    <Property Type="Int32" Name="ProperyID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblMail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="senderContact" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="messages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblAdmin">
+    <Key>
+      <PropertyRef Name="Admin_ID" />
+    </Key>
+    <Property Name="Admin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

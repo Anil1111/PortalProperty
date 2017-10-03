@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html ng-app="SignIn">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="PropertyInfoController">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label for="inputEmail">Property Identification</label>
+                        <input type="text" value="Id" ng-model="Prop_id" class="form-control input-lg" placeholder="Id" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Number of BedRooms</label>
+                        <input type="text" value="BedRoom" ng-model="BedRoom" class="form-control input-lg" placeholder="BedRoom" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Number Of BathRooms</label>
+                        <input type="text" ng-model="BathRoom" class="form-control input-lg" placeholder="BathRoom" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Number of Garages</label>
+                        <input type="text" ng-model="Garage" class="form-control input-lg" placeholder="Garage" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Address</label>
+                        <input type="Text" ng-model="Address" class="form-control input-lg" placeholder="Address" disabled />
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div>
+                <button ng-click="EditProp()" class="btn btn-info form-control input-lg">Update</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
